@@ -7,7 +7,8 @@ RUN apt-get update -y && apt-get install curl zip pkg-config libxcursor-dev libx
 RUN apt-get install libxext-dev libxinerama-dev libxrandr-dev libxi-dev build-essential zlib1g-dev libncurses5-dev libgdm-dev -y
 RUN apt-get install libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev -y
 RUN apt-get install python3-pip -y
-RUN apt-get install git -y
+RUN apt-get install git git-lfs -y
+RUN git lfs install
 # RUN apt-get install python3.12-venv -y
 # RUN apt-get install pipx -y
 # RUN pipx ensurepath
