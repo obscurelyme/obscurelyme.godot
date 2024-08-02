@@ -27,11 +27,12 @@ RUN chmod +x butler
 RUN mv butler /usr/local/bin/butler 
 
 COPY --chown=root:root Godot_v4.2.2-stable_linux.x86_64 /usr/local/bin/godot
-COPY --chown=root:root Godot_v4.2.2-stable_export_templates.tpz /export-templates/Godot_v4.2.2-stable_export_templates.tpz
+COPY --chown=root:root templates.zip templates.zip
 
-RUN unzip /export-templates/Godot_v4.2.2-stable_export_templates.tpz
+RUN unzip templates.zip
+
 RUN mkdir -v -p ~/.local/share/godot/export_templates/
-RUN mv ./templates ~/.local/share/godot/export_templates/4.2.2.stable
+RUN mv templates ~/.local/share/godot/export_templates/4.2.2.stable
 
 WORKDIR /obscurelyme/project
 # RUN mkdir -v -p build/windows
